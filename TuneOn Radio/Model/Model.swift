@@ -13,6 +13,7 @@ struct Model {
         return stations[currentIndex]
     }
     private(set) var isPlaying: Bool = false
+    private(set) var isReady: Bool = false
     private var currentIndex = 0
     private var stream: AudioStream?
     
@@ -74,11 +75,16 @@ struct Model {
     }
     
     private mutating func initStream() {
-        stream = AudioStream(stringUrl: currentStation.url)
+        stream = AudioStream(stringUrl: currentStation.url, onReady: {
+            
+        }, onFailed: {
+            
+        })
     }
     
     mutating func clearStream() {
         isPlaying = false
+        isReady = false
         
         if let player = stream {
             player.pause()
