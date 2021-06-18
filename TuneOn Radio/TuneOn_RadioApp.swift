@@ -11,7 +11,7 @@ import SwiftUI
 struct TuneOn_RadioApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ViewModel())
         }
     }
 }

@@ -11,6 +11,10 @@
 		FD8A0222267C90BF006BF00C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0221267C90BF006BF00C /* ContentView.swift */; };
 		FD8A0224267C90C0006BF00C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A0223267C90C0006BF00C /* Assets.xcassets */; };
 		FD8A0227267C90C0006BF00C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A0226267C90C0006BF00C /* Preview Assets.xcassets */; };
+		FD8A0230267C9F42006BF00C /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A022F267C9F42006BF00C /* AudioStream.swift */; };
+		FD8A0234267C9F95006BF00C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0233267C9F95006BF00C /* ViewModel.swift */; };
+		FD8A0236267C9FCC006BF00C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0235267C9FCC006BF00C /* Model.swift */; };
+		FD8A0238267CA756006BF00C /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0237267CA756006BF00C /* Station.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		FD8A0223267C90C0006BF00C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD8A0226267C90C0006BF00C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD8A0228267C90C0006BF00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8A022F267C9F42006BF00C /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
+		FD8A0233267C9F95006BF00C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FD8A0235267C9FCC006BF00C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FD8A0237267CA756006BF00C /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +60,15 @@
 		FD8A021E267C90BF006BF00C /* TuneOn Radio */ = {
 			isa = PBXGroup;
 			children = (
+				FD8A0232267C9F88006BF00C /* Model */,
+				FD8A0231267C9F83006BF00C /* View */,
+				FD8A022E267C9F10006BF00C /* StreamLib */,
 				FD8A021F267C90BF006BF00C /* TuneOn_RadioApp.swift */,
 				FD8A0221267C90BF006BF00C /* ContentView.swift */,
 				FD8A0223267C90C0006BF00C /* Assets.xcassets */,
 				FD8A0228267C90C0006BF00C /* Info.plist */,
 				FD8A0225267C90C0006BF00C /* Preview Content */,
+				FD8A0233267C9F95006BF00C /* ViewModel.swift */,
 			);
 			path = "TuneOn Radio";
 			sourceTree = "<group>";
@@ -67,6 +79,30 @@
 				FD8A0226267C90C0006BF00C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD8A022E267C9F10006BF00C /* StreamLib */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A022F267C9F42006BF00C /* AudioStream.swift */,
+			);
+			path = StreamLib;
+			sourceTree = "<group>";
+		};
+		FD8A0231267C9F83006BF00C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD8A0232267C9F88006BF00C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD8A0235267C9FCC006BF00C /* Model.swift */,
+				FD8A0237267CA756006BF00C /* Station.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8A0236267C9FCC006BF00C /* Model.swift in Sources */,
 				FD8A0222267C90BF006BF00C /* ContentView.swift in Sources */,
 				FD8A0220267C90BF006BF00C /* TuneOn_RadioApp.swift in Sources */,
+				FD8A0234267C9F95006BF00C /* ViewModel.swift in Sources */,
+				FD8A0238267CA756006BF00C /* Station.swift in Sources */,
+				FD8A0230267C9F42006BF00C /* AudioStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IvonGames.TuneOn-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IvonGames.TuneOn-Radio";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
