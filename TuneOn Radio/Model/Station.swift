@@ -32,14 +32,9 @@ struct Station: Identifiable {
     var url: String
     
     func getLogo() -> UIImage {
-        var path = Bundle.main.path(forResource: "\(id)_logo", ofType: "png")
+        let path = Bundle.main.path(forResource: "\(id)_logo", ofType: "png")
         if let filepath = path {
             return UIImage(contentsOfFile: filepath) ?? UIImage.init()
-        } else {
-            path = Bundle.main.path(forResource: "logo", ofType: "png")
-            if let filepath = path {
-                return UIImage(contentsOfFile: filepath) ?? UIImage.init()
-            }
         }
         
         return UIImage.init()
