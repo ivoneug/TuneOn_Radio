@@ -11,7 +11,8 @@ struct ControlPanel: View {
     var previousAction: () -> Void
     var nextAction: () -> Void
     var playPauseToggleAction: () -> Void
-    var isPlaying: Bool = false
+    var isPlaying: Bool
+    var isReady: Bool
     
     var body: some View {
         HStack {
@@ -19,7 +20,14 @@ struct ControlPanel: View {
                 Image(systemName: "chevron.backward.circle")
             }
             Button(action: playPauseToggleAction) {
-                Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+                if isPlaying && !isReady {
+                    ZStack {
+                        Image(systemName: "circle")
+                        ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    }
+                } else {
+                    Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+                }
             }
             Button(action: nextAction) {
                 Image(systemName: "chevron.forward.circle")
@@ -41,6 +49,6 @@ struct ControlPanel_Previews: PreviewProvider {
             
         }, playPauseToggleAction: {
             
-        }, isPlaying: false)
+        }, isPlaying: true, isReady: false)
     }
 }

@@ -39,6 +39,7 @@
 		FD8A0295267CD914006BF00C /* 2_3b.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FD8A0281267CD914006BF00C /* 2_3b.jpeg */; };
 		FD8A0296267CD914006BF00C /* 2b.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FD8A0282267CD914006BF00C /* 2b.jpeg */; };
 		FD8A0298267CDD51006BF00C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0297267CDD51006BF00C /* Background.swift */; };
+		FD8A029A267E3158006BF00C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A0299267E3158006BF00C /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		FD8A0281267CD914006BF00C /* 2_3b.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_3b.jpeg; sourceTree = "<group>"; };
 		FD8A0282267CD914006BF00C /* 2b.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2b.jpeg; sourceTree = "<group>"; };
 		FD8A0297267CDD51006BF00C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		FD8A0299267E3158006BF00C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				FD8A0239267CC034006BF00C /* ControlPanel.swift */,
 				FD8A023E267CC395006BF00C /* StationHeader.swift */,
 				FD8A0297267CDD51006BF00C /* Background.swift */,
+				FD8A0299267E3158006BF00C /* ActivityIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				FD8A0222267C90BF006BF00C /* ContentView.swift in Sources */,
 				FD8A023A267CC034006BF00C /* ControlPanel.swift in Sources */,
 				FD8A0220267C90BF006BF00C /* TuneOn_RadioApp.swift in Sources */,
+				FD8A029A267E3158006BF00C /* ActivityIndicator.swift in Sources */,
 				FD8A0234267C9F95006BF00C /* ViewModel.swift in Sources */,
 				FD8A0238267CA756006BF00C /* Station.swift in Sources */,
 				FD8A0230267C9F42006BF00C /* AudioStream.swift in Sources */,

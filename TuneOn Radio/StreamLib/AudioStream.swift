@@ -8,27 +8,32 @@
 import Foundation
 import AVFoundation
 
+enum AudioStreamState {
+    case unknown
+    case ready
+    case failed
+}
+
 class AudioStream: NSObject {
+    private(set) var isReady: Bool = false
     private var url: URL
     private var player: AVPlayer
     private var observerContext = 0
-    private var onReadyCallback: () -> Void
-    private var onFailedCallback: () -> Void
+    private var onStateChangedCallback: () -> Void
     
-    init(stringUrl: String, onReady: @escaping () -> Void, onFailed: @escaping () -> Void) {
+    init(stringUrl: String, onStateChanged: @escaping () -> Void) {
         url = URL(string: stringUrl)!
         player = AVPlayer(url: url)
         
-        onReadyCallback = onReady
-        onFailedCallback = onFailed
+        onStateChangedCallback = onStateChanged
         
         super.init()
         
-        player.addObserver(self, forKeyPath: "status", options: .new, context: &observerContext)
+        player.addObserver(self, forKeyPath: "reasonForWaitingToPlay", options: .new, context: &observerContext)
     }
     
     deinit {
-        player.removeObserver(self, forKeyPath: "status")
+        player.removeObserver(self, forKeyPath: "reasonForWaitingToPlay")
     }
     
     public func play() {
@@ -45,16 +50,9 @@ class AudioStream: NSObject {
             return
         }
         
-        if keyPath == "status" {
-            let status = change![.newKey] as! AVPlayer.Status
-            switch status {
-            case AVPlayer.Status.readyToPlay:
-                onReadyCallback()
-            case AVPlayer.Status.failed:
-                onFailedCallback()
-            default:
-                break
-            }
+        if keyPath == "reasonForWaitingToPlay" {
+            isReady = change![.newKey] is NSNull
+            onStateChangedCallback()
         }
     }
 }

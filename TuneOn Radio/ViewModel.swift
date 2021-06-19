@@ -18,23 +18,40 @@ class ViewModel: ObservableObject {
         model.isPlaying
     }
     
+    var isReady: Bool {
+        model.isReady
+    }
+    
     init() {
         model = Model()
     }
     
     func play() {
+        prepare()
         model.play()
     }
     
     func pause() {
+        prepare()
         model.pause()
     }
     
     func next() {
+        prepare()
         model.nextStation()
     }
     
     func previous() {
+        prepare()
         model.previousStation()
+    }
+    
+    private func prepare() {
+        model.onChangeAction = notifyChange
+        notifyChange()
+    }
+    
+    private func notifyChange() {
+        self.objectWillChange.send()
     }
 }

@@ -43,7 +43,7 @@ struct ContentView: View {
                     } else {
                         viewModel.play()
                     }
-                }, isPlaying: viewModel.isPlaying)
+                }, isPlaying: viewModel.isPlaying, isReady: viewModel.isReady)
             }
         }
     }

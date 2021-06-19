@@ -7,17 +7,20 @@
 
 import Foundation
 
-struct Model {
+class Model {
     var stations: [Station] = allStations
     var currentStation: Station {
         return stations[currentIndex]
     }
     private(set) var isPlaying: Bool = false
-    private(set) var isReady: Bool = false
+    var isReady: Bool {
+        stream?.isReady ?? false
+    }
     private var currentIndex = 0
     private var stream: AudioStream?
+    var onChangeAction: (() -> Void)?
     
-    mutating func nextStation() {
+    func nextStation() {
         currentIndex += 1
         if currentIndex == stations.count {
             currentIndex = 0
@@ -26,7 +29,7 @@ struct Model {
         stationChanged()
     }
     
-    mutating func previousStation() {
+    func previousStation() {
         currentIndex -= 1
         if currentIndex < 0 {
             currentIndex = stations.count - 1
@@ -35,7 +38,7 @@ struct Model {
         stationChanged()
     }
     
-    mutating func play() {
+    func play() {
         if isPlaying {
             return
         }
@@ -50,7 +53,7 @@ struct Model {
         }
     }
     
-    mutating func pause() {
+    func pause() {
         if !isPlaying {
             return
         }
@@ -61,7 +64,7 @@ struct Model {
         }
     }
     
-    private mutating func stationChanged() {
+    private func stationChanged() {
         let shouldPlay = isPlaying
         
         if isPlaying {
@@ -74,17 +77,16 @@ struct Model {
         }
     }
     
-    private mutating func initStream() {
-        stream = AudioStream(stringUrl: currentStation.url, onReady: {
-            
-        }, onFailed: {
-            
+    private func initStream() {
+        stream = AudioStream(stringUrl: currentStation.url, onStateChanged: { [self] in
+            if let onChange = onChangeAction {
+                onChange()
+            }
         })
     }
     
-    mutating func clearStream() {
+    func clearStream() {
         isPlaying = false
-        isReady = false
         
         if let player = stream {
             player.pause()
