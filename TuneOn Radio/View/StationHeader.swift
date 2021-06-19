@@ -18,6 +18,7 @@ struct StationHeader: View {
                 .padding()
                 .background(Color.white.opacity(0.75))
                 .cornerRadius(5, corners: [.allCorners])
+                .shadow(radius: 7)
         }
         .padding(44)
     }

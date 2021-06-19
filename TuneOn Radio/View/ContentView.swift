@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Background(station: allStations[2])
+            Background(imageNames: ["bg1", "bg2", "bg3"])
                 .zIndex(-1)
             VStack {
                 if isSwitched {

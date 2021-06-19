@@ -38,6 +38,7 @@ struct ControlPanel: View {
         .foregroundColor(.black)
         .background(Color.white.opacity(0.75))
         .cornerRadius(10, corners: [.allCorners])
+        .shadow(radius: 7)
     }
 }
 

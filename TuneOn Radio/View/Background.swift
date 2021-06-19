@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Background: View {
-    var station: Station
     private let switchTimer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
     private var nextImageIndex: Int {
@@ -26,10 +25,8 @@ struct Background: View {
     @State var imageIndex: Int = 0
     @State var isFlipped: Bool = false
     
-    init(station: Station) {
-        self.station = station
-        
-        ambientImages = station.getAmbienImages()
+    init(imageNames: [String]) {
+        ambientImages = getAmbienImages(imageNames)
         imageIndex = 0
         isFlipped = !isFlipped
     }
@@ -50,6 +47,7 @@ struct Background: View {
                     .transition(.opacity)
             }
         }
+        .blur(radius: 15.0)
         .onReceive(switchTimer, perform: { _ in
             withAnimation(.easeOut(duration: 1)) {
                 changeImage()
@@ -57,14 +55,33 @@ struct Background: View {
         })
     }
     
-    func changeImage() {
+    private func changeImage() {
         imageIndex = nextImageIndex
         isFlipped = !isFlipped
+    }
+    
+    private func getAmbienImages(_ imageNames: [String]) -> [UIImage] {
+        var images = [UIImage]()
+        
+        for name in imageNames {
+            var image: UIImage?
+            let path = Bundle.main.path(forResource: name, ofType: "png")
+            
+            if let filepath = path {
+                image = UIImage(contentsOfFile: filepath)
+            }
+            
+            if let imageItem = image {
+                images.append(imageItem)
+            }
+        }
+        
+        return images
     }
 }
 
 struct Background_Previews: PreviewProvider {
     static var previews: some View {
-        Background(station: allStations[0])
+        Background(imageNames: ["bg1", "bg2", "bg3"])
     }
 }

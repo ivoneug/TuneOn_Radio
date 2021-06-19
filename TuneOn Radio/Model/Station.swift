@@ -44,28 +44,4 @@ struct Station: Identifiable {
         
         return UIImage.init()
     }
-    
-    func getAmbienImages() -> [UIImage] {
-        var images = [UIImage]()
-        
-        for index in 1...3 {
-            var image: UIImage?
-            var path = Bundle.main.path(forResource: "\(id)_\(index)b", ofType: "jpeg")
-            
-            if let filepath = path {
-                image = UIImage(contentsOfFile: filepath)
-            } else {
-                path = Bundle.main.path(forResource: "\(index)b", ofType: "jpeg")
-                if let filepath = path {
-                    image = UIImage(contentsOfFile: filepath)
-                }
-            }
-            
-            if let imageItem = image {
-                images.append(imageItem)
-            }
-        }
-        
-        return images
-    }
 }
