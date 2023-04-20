@@ -38,7 +38,18 @@
 		FD8A02BE267E423C006BF00C /* 4_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8A02B3267E423C006BF00C /* 4_logo.png */; };
 		FD8A02BF267E423C006BF00C /* 8_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8A02B4267E423C006BF00C /* 8_logo.png */; };
 		FD8A02C0267E423C006BF00C /* 6_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8A02B5267E423C006BF00C /* 6_logo.png */; };
+		FD99AE8E29F17F8000F7E037 /* TuneOn_RadioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD99AE8D29F17F8000F7E037 /* TuneOn_RadioTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD99AE8F29F17F8000F7E037 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8A0214267C90BF006BF00C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD8A021B267C90BF006BF00C;
+			remoteInfo = "TuneOn Radio";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FD8A021C267C90BF006BF00C /* TuneOn Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TuneOn Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,10 +85,19 @@
 		FD8A02B3267E423C006BF00C /* 4_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_logo.png; sourceTree = "<group>"; };
 		FD8A02B4267E423C006BF00C /* 8_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8_logo.png; sourceTree = "<group>"; };
 		FD8A02B5267E423C006BF00C /* 6_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6_logo.png; sourceTree = "<group>"; };
+		FD99AE8B29F17F8000F7E037 /* TuneOn RadioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TuneOn RadioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD99AE8D29F17F8000F7E037 /* TuneOn_RadioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneOn_RadioTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FD8A0219267C90BF006BF00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD99AE8829F17F8000F7E037 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FD8A021E267C90BF006BF00C /* TuneOn Radio */,
+				FD99AE8C29F17F8000F7E037 /* TuneOn RadioTests */,
 				FD8A021D267C90BF006BF00C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FD8A021C267C90BF006BF00C /* TuneOn Radio.app */,
+				FD99AE8B29F17F8000F7E037 /* TuneOn RadioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +212,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		FD99AE8C29F17F8000F7E037 /* TuneOn RadioTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD99AE8D29F17F8000F7E037 /* TuneOn_RadioTests.swift */,
+			);
+			path = "TuneOn RadioTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,17 +240,39 @@
 			productReference = FD8A021C267C90BF006BF00C /* TuneOn Radio.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FD99AE8A29F17F8000F7E037 /* TuneOn RadioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD99AE9329F17F8000F7E037 /* Build configuration list for PBXNativeTarget "TuneOn RadioTests" */;
+			buildPhases = (
+				FD99AE8729F17F8000F7E037 /* Sources */,
+				FD99AE8829F17F8000F7E037 /* Frameworks */,
+				FD99AE8929F17F8000F7E037 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD99AE9029F17F8000F7E037 /* PBXTargetDependency */,
+			);
+			name = "TuneOn RadioTests";
+			productName = "TuneOn RadioTests";
+			productReference = FD99AE8B29F17F8000F7E037 /* TuneOn RadioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		FD8A0214267C90BF006BF00C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					FD8A021B267C90BF006BF00C = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					FD99AE8A29F17F8000F7E037 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = FD8A021B267C90BF006BF00C;
 					};
 				};
 			};
@@ -238,6 +290,7 @@
 			projectRoot = "";
 			targets = (
 				FD8A021B267C90BF006BF00C /* TuneOn Radio */,
+				FD99AE8A29F17F8000F7E037 /* TuneOn RadioTests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +323,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD99AE8929F17F8000F7E037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -291,7 +351,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD99AE8729F17F8000F7E037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD99AE8E29F17F8000F7E037 /* TuneOn_RadioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD99AE9029F17F8000F7E037 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD8A021B267C90BF006BF00C /* TuneOn Radio */;
+			targetProxy = FD99AE8F29F17F8000F7E037 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FD8A0229267C90C0006BF00C /* Debug */ = {
@@ -454,6 +530,46 @@
 			};
 			name = Release;
 		};
+		FD99AE9129F17F8000F7E037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QT27G5NN83;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.IvonGames.TuneOn-RadioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuneOn Radio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuneOn Radio";
+			};
+			name = Debug;
+		};
+		FD99AE9229F17F8000F7E037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QT27G5NN83;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.IvonGames.TuneOn-RadioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TuneOn Radio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TuneOn Radio";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -471,6 +587,15 @@
 			buildConfigurations = (
 				FD8A022C267C90C0006BF00C /* Debug */,
 				FD8A022D267C90C0006BF00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD99AE9329F17F8000F7E037 /* Build configuration list for PBXNativeTarget "TuneOn RadioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD99AE9129F17F8000F7E037 /* Debug */,
+				FD99AE9229F17F8000F7E037 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
